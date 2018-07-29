@@ -1,0 +1,264 @@
+body {
+  text-align: center; /* reset this so you can use display:inline-block in wrapper */
+  background-image: url("StickyNotes1.jpg");
+  color: #000000;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+#content {
+  display: inline-block;
+  /* height: 700px; */
+}
+
+h3 {
+  margin-bottom: 4Px;
+}
+
+#projectArea {
+  float: left;
+  display: inline-block;
+  background-color: #d9dcdd;
+  width: 350Px;
+  min-height: 1150Px;
+  padding-right: 20Px;
+  padding-left: 20Px;
+  text-align: left;
+}
+
+#taskArea {
+  float: left;
+  display: inline-block;
+  background-color: #ffffff;
+  width: 350Px;
+  min-height: 1150Px;
+  padding-right: 20Px;
+  padding-left: 20Px;
+  text-align: left;
+}
+
+#calendarView {
+  float: left;
+  display: inline-block;
+  background-color: #e7f1f1;
+  width: 350Px;
+  min-height: 1150Px;
+  padding-right: 20Px;
+  padding-left: 20Px;
+  text-align: left;
+}
+
+#headerpic {
+  border-color: black;
+  border-style: solid;
+  border-width: medium;
+}
+
+.day {
+  color: green;
+  font-weight: bold;
+  margin-top: 0Px;
+}
+
+hr {
+  margin-top: 20Px;
+  margin-bottom: 2Px;
+}
+
+#byDueDate, #currentProjectDesc {
+  margin-top: 0Px;
+  margin-bottom: 20Px;
+}
+
+.dueDate, .dueDateDate {
+  margin-top: 0Px;
+  margin-bottom: 20Px;
+}
+
+.task2ndline {
+  margin-top:-14Px;
+  margin-bottom: 22Px;
+}
+
+#newTask {
+  margin-bottom: 10Px;
+}
+
+#newProject {
+  margin-top: 15Px;
+  margin-bottom: 15Px;
+}
+
+.taskTitleC {
+  margin-bottom: 0;
+}
+
+.taskTitleC:hover, .taskTitle:hover, .project:hover, #currentProject:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+/* project description in Calendar view */
+.taskProject {
+  margin-top: 2Px;
+  font-size: 12Px;
+  color: grey;
+}
+
+.boxTick {
+  width: 20Px;
+}
+
+.boxTick:hover {
+  cursor: pointer;
+}
+
+.btnUpx, .btnDownx, .delete {
+  color: blue;
+  border-radius: 50%;
+  border: none;
+  margin-right: 1Px;
+}
+
+.btnUpx:hover, .btnDownx:hover, .delete:hover {
+  background-color: darkgray;
+  cursor: pointer;
+}
+
+.btnUpx, .btnDownx {
+  float: right;
+}
+
+/* buttons */
+#newProject, #newTask {
+  border-radius: 10%;
+  border-width: thin;
+  border-color: black;
+}
+
+#newProject:hover, #newTask:hover {
+  color: blue;
+  background-color: #c8c3c3;
+}
+
+
+/*  */
+/* Forms css */
+.modal, .modalP, .modalET, .modalEP {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-form, .modal-formP, .modal-formET, .modal-formEP {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width:300px;
+    min-width:250px;
+    padding:10px 50px;
+    border:2px solid gray;
+    border-radius:10px;
+    background-color:#fff
+}
+.close-button, .close-buttonP, .close-buttonET, .close-buttonEP {
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #FFBC00;
+    position:absolute;
+    right:-10px;
+    top:-10px;
+    color: white;
+}
+.close-button:hover, .close-buttonP:hover, .close-buttonET:hover, .close-buttonEP:hover  {
+    /* background-color: darkgray; */
+    color: black;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+
+#taskF {
+
+}
+#projectF {
+
+}
+#dueDateF {
+
+}
+textarea {
+width:90%;
+height:95px;
+padding:10px;
+resize:none;
+margin-top:20px;
+border:1px solid #ccc;
+padding-left:20px;
+font-size:14px;
+margin-bottom:30px
+font-family: inherit;
+}
+#submitTask, #submitProj, #submitTaskET, #submitProjEP {
+width:100%;
+text-align:center;
+display:block;
+background-color:#FFBC00;
+color: white;
+border:1px solid #FFCB00;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px;
+margin-top: 30Px;
+}
+#submitTask:hover, #submitProj:hover, #submitTaskET, #submitProjEP {
+  color: black;
+}
+input[type=text] {
+width:90%;
+padding:10px;
+margin-top:20px;
+border:1px solid #ccc;
+padding-left:20px;
+font-size:16px;
+font-family: inherit;
+}
+label {
+  float: left;
+  margin-bottom: -20Px;
+  margin-top: 10Px;
+  font-weight: bold;
+}
+#completeET {
+  float: left;
+  height: 35Px;
+}
+
+#dueDateF, #dueDateET {
+  width: 90%;
+  padding: 8Px;
+  padding-left: 20Px;
+  margin-top:20Px;
+  border:1px solid #ccc;
+  font-size: 16Px;
+  font-family: inherit;
+}
+
+confirm {
+  color: blue;
+  background: orange;
+}

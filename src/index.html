@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Let's doooooo it!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/datepicker.css">
+    <script src="https://unpkg.com/js-datepicker"></script>
+  </head>
+
+<body>
+    <div>
+      <img src="header.png" id="headerpic"/>
+    </div>
+    <div id="content">
+
+        <div id="projectArea">
+          <img src="spi1clear.png" width="350"/>
+          <h3 id="projects">Projects:</h3>
+          <button id="newProject">New Project</button> <!-- add here -->
+          <div id="projectList">
+            <p class="project">Dummy project1</p>
+            <p class="project">Dummy project2</p>
+            <p class="project">Dummy project3</p>
+          </div>
+        </div>
+
+        <div id="taskArea">
+          <img src="spi1clear.png" width="350"/>
+          <div id="projectDisplay">
+            <h3>
+              <span id="currentProject">Dummy Project Title</span>
+              <button class="delete">&#x2717;</button>
+            </h3>
+            <p id="currentProjectDesc">Dummy project description. Could be quite
+                  a long description so need to allow for it.</p>
+            <button id="newTask">New Task</button>
+
+            <!-- task area. tick, title, x (delete), due date, up/down buttons-->
+            <p>
+              <img class="boxTick" src="box1.jpg"/> <!-- 2611 is a box with tick-->
+              <span class="taskTitle">Dummy task title1 more more more</span> <!--need ids for clicking-->
+              <button class="delete">&#x2717;</button>  <!-- or image of delete cross -->
+            </p>
+            <p class="task2ndline">
+              <span class="dueDate">Due Date: </span>
+              <span class="dueDateDate">xx/xx/xx</span>
+              <button class="btnUpx">&#x25B2;</button>
+              <button class="btnDownx">&#x25BC;</button>
+            </p>
+
+            <p>
+              <img class="boxTick" src="boxtick1.jpg"/>
+              <span class="taskTitle">Dummy task title2 with a bit more much much longer</span> <!--need ids for clicking-->
+              <button class="delete">&#x2717;</button>
+            </p>
+            <p class="task2ndline">
+              <span class="dueDate">Due Date: </span>
+              <span class="dueDateDate">xx/xx/xx</span>
+              <button class="btnUpx">&#x25B2;</button>
+              <button class="btnDownx">&#x25BC;</button>
+            </p>
+
+            <p>
+              <img class="boxTick" src="boxtick1.jpg"/>
+              <span class="taskTitle">Dummy task title3 </span> <!--need ids for clicking-->
+              <button class="delete">&#x2717;</button>
+            </p>
+            <p class="task2ndline">
+              <span class="dueDate">Due Date: </span>
+              <span class="dueDateDate">xx/xx/xx</span>
+              <button class="btnUpx">&#x25B2;</button>
+              <button class="btnDownx">&#x25BC;</button>
+            </p>
+
+            <p>
+              <img class="boxTick" src="box1.jpg"/>
+              <span class="taskTitle">Dummy task title4 </span> <!--need ids for clicking-->
+              <button class="delete">&#x2717;</button>
+            </p>
+            <p class="task2ndline">
+              <span class="dueDate">Due Date: </span>
+              <span class="dueDateDate">xx/xx/xx</span>
+              <button class="btnUpx">&#x25B2;</button>
+              <button class="btnDownx">&#x25BC;</button>
+            </p>
+          </div>
+
+
+        </div>
+
+
+        <div id="calendarView">
+           <!-- only needed for the demo layout -->
+          <img src="spi1clear.png" width="350"/>
+          <h3 id="calendarTitle">Calendar View:</h3>
+          <p id="byDueDate">By due date</p>
+          <div id="calendarBody">
+            <hr>
+            <p class="day">Overdue</p>
+            <p class="taskTitleC">Dummy task title Today</p>
+            <p class="taskProject">Dummy task 1</p>
+            <p class="taskTitleC">Another dummy task title Today which is really really really long</p>
+            <p class="taskProject">Dummy task 2</p>
+            <hr>
+            <p class="day">Today</p>
+            <p class="taskTitleC">Dummy task title Today</p>
+            <p class="taskProject">Dummy task 1</p>
+            <hr>
+            <p class="day">Tomorrow</p>
+            <p class="taskTitleC">Dummy task title Today</p>
+            <p class="taskProject">Dummy task 3</p>
+            <hr>
+            <p class="day">Thursday 8th August</p>
+            <p class="taskTitleC">Dummy task title Today</p>
+            <p class="taskProject">Dummy task 3</p>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- New task modal form -->
+    <div class="modal">
+      <form action="#" class="modal-form" id="newTaskForm" method="post" name="formT">
+        <span class="close-button">×</span>
+        <h2>New Task</h2>
+        <hr>
+        <!-- <label id="projectF">Project:</label><br/> -->
+        <label>Task:</label>
+        <input id="taskF" name="taskF" placeholder="Enter task name" type="text" required>
+        <label>Due Date:</label>
+        <input id="dueDateF" name="dueDateF" placeholder="Enter date" type="test" readonly="readonly" >
+        <label>Notes:</label>
+        <textarea id="notesF" name="notesF" placeholder="Enter notes"></textarea>
+        <input id="submitTask" type="submit" value="OK">
+        <!-- <button id="submitTask">OK</button> -->
+      </form>
+    </div>
+
+    <!-- Edit task modal form -->
+    <div class="modalET">
+      <form action="#" class="modal-form" id="editTaskForm" method="post" name="formT">
+        <span class="close-buttonET">×</span>
+        <h2>Edit Task</h2>
+        <hr>
+        <!-- <label id="projectF">Project:</label><br/> -->
+        <label id="taskNo" value=""></label> <!-- to hold current task number -->
+        <label>Task:</label>
+        <input id="taskET" name="taskET" placeholder="Enter task name" type="text" required>
+        <label>Due Date:</label>
+        <input id="dueDateET" name="dueDateET" placeholder="" type="text" readonly="readonly" required>
+        <label id="notesLabel">Notes:</label>
+        <textarea id="notesET" name="notesET" placeholder="Enter notes"></textarea>
+        <label>Complete?</label>
+        <input id="completeET" name="completeET" type="checkbox">
+        <input id="submitTaskET" type="submit" value="OK">
+        <!-- <button id="submitTask">OK</button> -->
+      </form>
+    </div>
+
+    <!-- New project modal form -->
+    <div class="modalP">
+        <form action="#" class="modal-form" id="newProjForm" method="post" name="formP">
+        <span class="close-buttonP">×</span>
+        <h2>New Project</h2>
+        <hr>
+        <label>Project:</label>
+        <input id="projectFN" name="projectFN" placeholder="Enter project name" type="text" required>
+        <label>Project description:</label>
+        <input id="projDescFN" name="projDescFN" placeholder="Enter description" type="text">
+        <input id="submitProj" type="submit" value="OK">
+      </form>
+    </div>
+
+    <!-- Edit project modal form -->
+    <div class="modalEP">
+        <form action="#" class="modal-form" id="editProjForm" method="post" name="formP">
+        <span class="close-buttonEP">×</span>
+        <h2>Edit Project</h2>
+        <hr>
+        <label>Project:</label>
+        <input id="projectEP" name="projectEP" placeholder="Enter project name" type="text" required>
+        <label>Project description:</label>
+        <input id="projDescEP" name="projDescEP" placeholder="Enter description" type="text">
+        <input id="submitProjEP" type="submit" value="OK">
+      </form>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script> <!-- for testing -->
+    <!--<script type="text/javascript" src="js/DOMstuff.js"></script> <! for testing -->
+
+    <!-- <script type="text/javascript" src="js/bundle.js"></script> -->
+
+</body>
+
+</html>
